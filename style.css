@@ -16,12 +16,19 @@ body {
   background-color: var(--color-bg-light);
   color: var(--color-primary);
   line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .site-header, .site-footer {
   background-color: var(--color-primary);
   color: white;
   padding: 1rem 2rem;
+}
+
+.site-footer {
+  margin-top: auto;
 }
 
 .header-container {
