@@ -23,12 +23,16 @@ body {
 
 .site-header, .site-footer {
   background-color: var(--color-primary);
-  color: white;
   padding: 1rem 2rem;
 }
 
 .site-footer {
   margin-top: auto;
+  color: var(--color-neutral);
+}
+
+.site-header {
+  color: white;
 }
 
 .header-container {
