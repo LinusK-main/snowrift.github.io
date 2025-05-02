@@ -1,33 +1,132 @@
+/* === Snowrift Interactive Styles === */
+
+:root {
+  --color-primary: #064c6e;      /* Deep Glacier Blue */
+  --color-accent: #3895b9;       /* Ice Lake Blue */
+  --color-bg-light: #ede9db;     /* Snow Veil */
+  --color-panel: #d7d2c2;        /* Alpine Mist */
+  --color-neutral: #aa9c82;      /* Frosted Earth */
+  --font-main: 'Segoe UI', sans-serif;
+}
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #0b0e14;
-    color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background-color: var(--color-bg-light);
+  color: var(--color-primary);
+  line-height: 1.6;
 }
 
-header {
-    background-color: #11151c;
-    padding: 1em;
-    text-align: center;
+.site-header, .site-footer {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 1rem 2rem;
 }
 
-nav a {
-    color: #88ccff;
-    margin: 0 1em;
-    text-decoration: none;
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo-placeholder {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+.site-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  flex-grow: 1;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.main-nav a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover {
+  color: var(--color-neutral);
 }
 
 main {
-    padding: 2em;
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
 }
 
-footer {
-    background-color: #11151c;
-    text-align: center;
-    padding: 1em;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+.center {
+  text-align: center;
+}
+
+h2 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+.button {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin: 0.5rem;
+}
+
+.button:hover {
+  background-color: var(--color-neutral);
+}
+
+.external-links {
+  margin-top: 1.5rem;
+}
+
+.timeline-list {
+  list-style: none;
+  padding: 0;
+  position: relative;
+  margin-top: 2rem;
+  border-left: 3px solid var(--color-primary);
+}
+
+.timeline-list li {
+  margin: 2rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.timeline-date {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: var(--color-neutral);
+}
+
+.timeline-card {
+  background-color: var(--color-panel);
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
