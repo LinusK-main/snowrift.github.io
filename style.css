@@ -1,11 +1,10 @@
-/* === Snowrift Interactive Styles === */
+/* === Snowrift Interactive – Dark Redesign === */
 
 :root {
-  --color-primary: #064c6e;      /* Deep Glacier Blue */
-  --color-accent: #3895b9;       /* Ice Lake Blue */
-  --color-bg-light: #ede9db;     /* Snow Veil */
-  --color-panel: #d7d2c2;        /* Alpine Mist */
-  --color-neutral: #aa9c82;      /* Frosted Earth */
+  --color-bg: #0F0F0F;           /* Black / Deep Charcoal */
+  --color-text: #FFFFFF;         /* White */
+  --color-accent: #CF7324;       /* Amber Orange */
+  --color-accent-hover: #d68029; /* Slightly lighter amber on hover */
   --font-main: 'Segoe UI', sans-serif;
 }
 
@@ -13,8 +12,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--font-main);
-  background-color: var(--color-bg-light);
-  color: var(--color-primary);
+  background-color: var(--color-bg);
+  color: var(--color-text);
   line-height: 1.6;
   min-height: 100vh;
   display: flex;
@@ -22,17 +21,13 @@ body {
 }
 
 .site-header, .site-footer {
-  background-color: var(--color-primary);
+  background-color: var(--color-bg);
   padding: 1rem 2rem;
+  color: var(--color-text);
 }
 
 .site-footer {
   margin-top: auto;
-  color: var(--color-neutral);
-}
-
-.site-header {
-  color: white;
 }
 
 .header-container {
@@ -63,7 +58,7 @@ body {
 }
 
 .main-nav a {
-  color: var(--color-accent);
+  color: var(--color-text);
   text-decoration: none;
   font-size: 0.9rem;
   letter-spacing: 1px;
@@ -71,7 +66,7 @@ body {
 }
 
 .main-nav a:hover {
-  color: var(--color-neutral);
+  color: var(--color-accent);
 }
 
 main {
@@ -95,30 +90,31 @@ main {
 }
 
 h2 {
-  color: var(--color-primary);
+  color: var(--color-text);
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 p {
   font-size: 1.1rem;
-  color: var(--color-primary);
+  color: var(--color-text);
 }
 
 .button {
   display: inline-block;
   background-color: var(--color-accent);
-  color: white;
+  color: var(--color-text);
   padding: 0.75rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
   transition: background-color 0.3s;
   margin: 0.5rem;
+  border: none;
 }
 
 .button:hover {
-  background-color: var(--color-neutral);
+  background-color: var(--color-accent-hover);
 }
 
 .external-links {
@@ -130,7 +126,7 @@ p {
   padding: 0;
   position: relative;
   margin-top: 2rem;
-  border-left: 3px solid var(--color-primary);
+  border-left: 3px solid var(--color-accent);
 }
 
 .timeline-list li {
@@ -142,12 +138,13 @@ p {
 .timeline-date {
   font-weight: bold;
   margin-bottom: 0.5rem;
-  color: var(--color-neutral);
+  color: var(--color-accent);
 }
 
 .timeline-card {
-  background-color: var(--color-panel);
+  background-color: #1A1A1A; /* Dark panel contrast */
   padding: 1rem;
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  color: var(--color-text);
 }
