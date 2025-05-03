@@ -278,3 +278,36 @@ main a:hover {
     right: auto;
   }
 }
+
+.about-layout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1 1 500px;
+  text-align: left;
+}
+
+.about-text h2 {
+  text-align: left;
+}
+
+.about-image {
+  flex: 0 1 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
