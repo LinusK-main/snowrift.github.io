@@ -179,3 +179,101 @@ main a:hover {
   font-style: italic;
 }
 
+.timeline-flow {
+  position: relative;
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 2rem 1rem;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--color-accent);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-entry {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 2.5rem 0;
+  z-index: 1;
+}
+
+.timeline-entry.left {
+  justify-content: flex-start;
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.timeline-entry.left .timeline-content {
+  align-items: flex-start;
+}
+
+.timeline-date {
+  color: var(--color-accent);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.timeline-card {
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  max-width: 320px;
+  position: relative;
+}
+
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-accent);
+}
+
+.timeline-entry.left .timeline-card::before {
+  left: 100%;
+  border-top-left-radius: 8px;
+}
+
+.timeline-entry.right .timeline-card::before {
+  right: 100%;
+  border-top-right-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .timeline-line {
+    left: 10px;
+  }
+
+  .timeline-entry,
+  .timeline-entry.left,
+  .timeline-entry.right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .timeline-card::before {
+    display: none;
+  }
+
+  .timeline-content {
+    align-items: flex-start !important;
+  }
+}
+
