@@ -270,3 +270,12 @@ main a:hover {
     transform: translateY(-50%);
   }
 }
+
+.timeline-period {
+  color: var(--color-accent);
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
