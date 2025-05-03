@@ -193,13 +193,6 @@ main a:hover {
   align-items: flex-start;
 }
 
-.timeline-date {
-  color: var(--color-accent);
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-
 .timeline-card {
   background-color: var(--color-bg);
   color: var(--color-text);
@@ -229,19 +222,34 @@ main a:hover {
   right: 100%;
 }
 
-/* === NODE GLOW EFFECT === */
+/* === NEW NODE INSIDE EACH CARD === */
 
 .timeline-node {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  right: -26px;
+  transform: translateY(-50%);
   width: 12px;
   height: 12px;
   background-color: var(--color-accent);
   border-radius: 50%;
   box-shadow: 0 0 6px 3px rgba(207, 115, 36, 0.5);
   z-index: 2;
+}
+
+.timeline-entry.left .timeline-node {
+  left: -26px;
+  right: auto;
+}
+
+/* === Period labels (e.g., March 2025) === */
+
+.timeline-period {
+  color: var(--color-accent);
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
 }
 
 /* === Mobile fix === */
@@ -266,16 +274,7 @@ main a:hover {
   }
 
   .timeline-node {
-    left: 10px;
-    transform: translateY(-50%);
+    left: calc(100% + 8px);
+    right: auto;
   }
 }
-
-.timeline-period {
-  color: var(--color-accent);
-  text-align: center;
-  margin-top: 3rem;
-  font-size: 1.4rem;
-  letter-spacing: 1px;
-}
-
