@@ -253,3 +253,10 @@ main a:hover {
     padding: 1rem 2rem;
   }
 }
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem 1rem;
+}
