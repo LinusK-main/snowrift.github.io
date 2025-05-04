@@ -260,3 +260,7 @@ main a:hover {
   text-align: center;
   padding: 2rem 1rem;
 }
+
+.nowrap {
+  white-space: nowrap;
+}
