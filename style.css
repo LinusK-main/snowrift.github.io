@@ -319,3 +319,30 @@ main a:hover {
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 }
+
+@media screen and (min-width: 1920px) {
+  .header-container img {
+    height: 60px;
+  }
+
+  .main-nav a {
+    font-size: 1.1rem;
+  }
+
+  h1.main-heading {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1.3rem;
+  }
+
+  .button {
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+  }
+}
