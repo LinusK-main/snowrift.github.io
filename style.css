@@ -345,10 +345,11 @@ body.home .external-links {
   display: flex;
   align-items: center;
   gap: 0.5rem; /* Avstånd mellan rubrik, pil och knapp */
+  margin-bottom: 0;
 }
 
 .devlog-summary {
-  margin-top: 1rem;  /* Lägger till lite utrymme under headern */
+  margin-top: 0.5rem;  /* Lägger till lite utrymme under headern */
   font-size: 1rem;
   color: var(--color-text);
   text-align: left;
