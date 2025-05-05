@@ -248,11 +248,9 @@ main a:hover {
 .timeline-date {
   color: var(--color-accent);
   font-weight: bold;
+  font-size: 1rem;
   margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-  position: absolute;
-  left: -7rem;
-  top: 1rem;
+  display: block;
 }
 
 .timeline-entry-box {
@@ -285,9 +283,6 @@ main a:hover {
   }
 
   .timeline-date {
-    position: relative;
-    left: 0;
-    top: 0;
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
   }
 }
