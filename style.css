@@ -34,13 +34,13 @@ body {
 
 .site-footer {
   margin-top: auto;
-  text-align: left;
   font-size: 0.9rem;
   padding: 1rem 2rem;
   background-color: var(--color-bg);
-  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
-
 
 .header-container {
   display: flex;
