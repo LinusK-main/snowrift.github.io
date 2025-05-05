@@ -29,17 +29,6 @@
       text-decoration: underline;
     }
 
-    .arrow-icon {
-      font-size: 1rem;
-      color: var(--color-accent);
-      transition: transform 0.3s ease;
-      display: inline-block;
-    }
-
-    .arrow-icon.rotate {
-      transform: rotate(90deg);
-    }
-
     .timeline-list {
       opacity: 0;
       max-height: 0;
@@ -50,7 +39,7 @@
 
     .timeline-list.visible {
       opacity: 1;
-      max-height: 3000px;
+      max-height: 5000px;
       transform: translateY(0);
     }
 
@@ -65,16 +54,22 @@
       transform: translateY(0);
     }
 
-    .timeline-list.visible .timeline-block:nth-child(1) {
-      transition-delay: 0.1s;
+    .timeline-list.visible .timeline-block:nth-child(1) { transition-delay: 0.1s; }
+    .timeline-list.visible .timeline-block:nth-child(2) { transition-delay: 0.25s; }
+    .timeline-list.visible .timeline-block:nth-child(3) { transition-delay: 0.4s; }
+
+    .toggle-button {
+      background: none;
+      border: none;
+      color: var(--color-accent);
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
     }
 
-    .timeline-list.visible .timeline-block:nth-child(2) {
-      transition-delay: 0.25s;
-    }
-
-    .timeline-list.visible .timeline-block:nth-child(3) {
-      transition-delay: 0.4s;
+    .toggle-button:hover {
+      color: var(--color-accent-hover);
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -114,10 +109,10 @@
 
     <br><br>
 
-    <div class="devlog-header">
+    <div class="devlog-header" id="devlog-header">
       <h2 class="section-title">Developer’s Log</h2>
-      <span class="arrow-icon" id="arrowIcon">▸</span>
-      <button class="devlog-toggle" onclick="toggleLog()" id="logToggleBtn">[Open]</button>
+      <span id="toggle-indicator">▸</span>
+      <button id="toggle-devlog" class="toggle-button">[Open]</button>
     </div>
 
     <section class="timeline-list" id="devlogSection">
@@ -155,15 +150,27 @@
 
   <script>
     const devlogSection = document.getElementById("devlogSection");
-    const toggleBtn = document.getElementById("logToggleBtn");
-    const arrowIcon = document.getElementById("arrowIcon");
+    const toggleBtn = document.getElementById("toggle-devlog");
+    const indicator = document.getElementById("toggle-indicator");
+    const header = document.getElementById("devlog-header");
 
-    function toggleLog() {
-      devlogSection.classList.toggle("visible");
-      const isOpen = devlogSection.classList.contains("visible");
-      toggleBtn.textContent = isOpen ? "[Close]" : "[Open]";
-      arrowIcon.classList.toggle("rotate", isOpen);
-    }
+    toggleBtn.addEventListener("click", () => {
+      const isVisible = devlogSection.classList.contains("visible");
+
+      if (isVisible) {
+        devlogSection.classList.remove("visible");
+        toggleBtn.textContent = "[Open]";
+        indicator.textContent = "▸";
+      } else {
+        devlogSection.classList.add("visible");
+        toggleBtn.textContent = "[Close]";
+        indicator.textContent = "▾";
+
+        setTimeout(() => {
+          header.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 200);
+      }
+    });
   </script>
 </body>
 </html>
