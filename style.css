@@ -426,13 +426,13 @@ main a:hover {
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid var(--color-accent);
-  animation: typing 3.5s steps(50, end), blink 0.75s step-end 3.5s 4;
+  animation: typing 3s steps(50, end), blink 1s step-end 3s 4;
 }
 
 .fade-after-type {
   opacity: 0;
   animation: fadeInText 1s ease forwards;
-  animation-delay: 4s; /* matchar slutet av skrivmaskinen */
+  animation-delay: 3s; /* matchar slutet av skrivmaskinen */
 }
 
 @keyframes fadeInText {
