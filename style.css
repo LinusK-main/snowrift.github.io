@@ -149,7 +149,7 @@ h1.main-heading {
 
 @keyframes typing {
   from { width: 0 }
-  to { width: 58% }
+  to { width: 60% }
 }
 
 @keyframes blink {
