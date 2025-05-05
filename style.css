@@ -331,7 +331,7 @@ body.home .external-links {
 }
 
 .arrow-icon {
-  font-size: 2rem;
+  font-size: 5rem;
   color: var(--color-accent);
   transition: transform 0.3s ease;
   display: inline-block;
