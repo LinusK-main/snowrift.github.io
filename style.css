@@ -349,18 +349,17 @@ body.home .external-links {
 
 .devlog-header {
   display: flex;
-  align-items: flex-start; /* detta säkerställer att allt börjar på toppen */
+  align-items: center;
   gap: 0.5rem;
-  flex-direction: column; /* ordnar rubrik och text vertikalt */
-  margin-bottom: 0.5rem; /* justera mellanrum mellan header och text */
 }
 
 .devlog-summary {
-  margin-top: 0.5rem; /* justera mellanrum mellan rubrik och sammanfattning */
+  margin-top: 0.25rem;  /* Lägger till lite avstånd mellan rubriken och texten */
   font-size: 1rem;
   color: var(--color-text);
   text-align: left;
 }
+
 
 
 @media screen and (max-width: 768px) {
