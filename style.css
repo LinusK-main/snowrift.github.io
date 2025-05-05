@@ -224,6 +224,10 @@ main a:hover {
   scale: 0.97;                      /* Visuell "nedtryckning" */
 }
 
+.hidden {
+  display: none;
+}
+
 .external-links.center {
   justify-content: center;
 }
@@ -312,3 +316,5 @@ body.home .external-links {
     font-size: 0.95rem;
   }
 }
+
+
