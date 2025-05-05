@@ -38,9 +38,10 @@ body {
   padding: 1rem 2rem;
   background-color: var(--color-bg);
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: flex-start; /* placerar innehåll till vänster horisontellt */
+  align-items: flex-start;     /* placerar innehåll högst upp vertikalt */
 }
+
 
 .header-container {
   display: flex;
