@@ -321,7 +321,7 @@ body.home .external-links {
   font-weight: bold;
   cursor: pointer;
   transition: color 0.3s;
-  font-size: 2rem;
+  font-size: 1.5rem;
   padding: 2;
 }
 
@@ -331,7 +331,7 @@ body.home .external-links {
 }
 
 .arrow-icon {
-  font-size: 1rem;
+  font-size: 2rem;
   color: var(--color-accent);
   transition: transform 0.3s ease;
   display: inline-block;
