@@ -347,35 +347,9 @@ body.home .external-links {
   gap: 0.2rem; /* Justera gapet för att minska avståndet mellan rubrik och text */
 }
 
-.devlog-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
 .devlog-summary {
   margin-top: 0.25rem;  /* Lägger till lite avstånd mellan rubriken och texten */
   font-size: 1rem;
   color: var(--color-text);
   text-align: left;
-}
-
-
-
-@media screen and (max-width: 768px) {
-  .timeline-list {
-    padding-left: 1rem;
-    border-left: 2px solid var(--color-accent);
-  }
-
-  .timeline-block {
-    position: relative;
-    margin-bottom: 2rem; /* Uppdaterad margin */
-    padding-left: 1rem;
-    z-index: 1;
-  }
-
-  .timeline-date {
-    font-size: 0.95rem;
-  }
 }
