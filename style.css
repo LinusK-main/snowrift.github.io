@@ -218,44 +218,31 @@ main a:hover {
   margin-top: 2rem;
 }
 
-/* === Timeline Card Stack Effect === */
+/* === Timeline Stacked Card Style === */
 .timeline-list {
   position: relative;
   max-width: 900px;
   margin: 2rem auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding-left: 0;
-  border-left: none;
+  padding-left: 2rem;
+  border-left: 4px solid var(--color-accent);
 }
 
 .timeline-block {
-  position: sticky;
-  top: 7rem;
-  z-index: 1;
-  margin-bottom: -5rem;
-  transform-origin: top center;
+  position: relative;
+  margin: 3rem 0;
+  padding-left: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.timeline-block:not(:last-child) {
-  transform: translateY(-1rem) scale(0.98);
-  opacity: 0.9;
-  filter: brightness(0.95);
-}
-
-.timeline-block:last-child {
-  transform: none;
-  z-index: 10;
-  opacity: 1;
-  filter: none;
+  z-index: 1;
 }
 
 .timeline-block:hover {
-  z-index: 11;
-  transform: scale(1.015) translateY(-0.5rem);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+.timeline-block:not(:last-child) {
+  margin-bottom: -2rem;
 }
 
 .timeline-date {
@@ -263,15 +250,9 @@ main a:hover {
   font-weight: bold;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
-  padding-left: 1rem;
-  transform: translateY(10px);
-  opacity: 0;
-  transition: all 0.5s ease;
-}
-
-.timeline-block:last-child .timeline-date {
-  transform: translateY(0);
-  opacity: 1;
+  position: absolute;
+  left: -7rem;
+  top: 1rem;
 }
 
 .timeline-entry-box {
@@ -294,15 +275,19 @@ main a:hover {
 }
 
 @media screen and (max-width: 768px) {
-  .timeline-block {
-    position: relative;
-    margin: 2rem 0;
-    transform: none !important;
-    filter: none !important;
-    opacity: 1 !important;
+  .timeline-list {
+    padding-left: 1rem;
+    border-left: 2px solid var(--color-accent);
   }
+
+  .timeline-block {
+    margin: 2rem 0;
+  }
+
   .timeline-date {
-    opacity: 1;
-    transform: none;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-bottom: 0.5rem;
   }
 }
