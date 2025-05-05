@@ -188,7 +188,7 @@ main a:hover {
 }
 
 .timeline-entry-box h3 {
-  font-weight: 400; /* eller 500 om du vill ha ännu lite mjukare */
+  font-weight: 300; /* eller 500 om du vill ha ännu lite mjukare */
   font-size: 1.3rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
