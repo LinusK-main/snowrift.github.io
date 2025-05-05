@@ -235,8 +235,6 @@ main a:hover {
   margin: 2rem 0;
   padding-left: 1rem;
   z-index: 1;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  transition: none;
 }
 
 .timeline-block:not(:last-child) {
@@ -259,6 +257,7 @@ main a:hover {
   margin-left: 0.25rem;
   position: relative;
   z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 .timeline-entry-box h3 {
