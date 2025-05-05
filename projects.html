@@ -6,14 +6,22 @@
   <title>Projects – Snowrift Interactive</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .hidden {
+      display: none;
+    }
+
+    .toggle-log .icon {
+      margin-right: 0.4em;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="header-container">
-<a href="index.html">
-  <img src="logga.png" alt="Snowrift Interactive Logo" height="40" />
-</a>
-
+      <a href="index.html">
+        <img src="logga.png" alt="Snowrift Interactive Logo" height="40" />
+      </a>
       <nav class="main-nav">
         <a href="index.html">HOME</a>
         <a href="projects.html" class="active">PROJECTS</a>
@@ -36,62 +44,79 @@
         <strong>Keep an eye on Steam for updates and a future release date.</strong>
       </p>
 
-<div class="external-links left">
+      <div class="external-links left">
         <a href="#" class="button">Steam</a>
         <a href="https://snowriftinteractive.itch.io/" class="button">Itch.io</a>
       </div>
     </section>
-      
+
     <br>
-    
-<h2 class="section-title">Developer’s Log</h2>
-<section class="timeline-list">
 
-  <div class="timeline-block">
-    <div class="timeline-date">March 2025</div>
-    <div class="timeline-entry-box">
-      <h3><strong>Project Setup & First Prototype</strong></h3>
-      <p><strong>Focused on structure and gameplay basics.</strong> Established the Unity project foundation, defined the narrative direction, and outlined core mechanics. Early concepts for enemies and story beats were created. A playable prototype with basic movement and door/key interaction was implemented.</p>
-    </div>
-  </div>
+    <h2 class="section-title">Developer’s Log</h2>
 
-  <div class="timeline-block">
-    <div class="timeline-date">April 2025</div>
-    <div class="timeline-entry-box">
-      <h3><strong>Visual Direction & Early Systems</strong></h3>
-      <p><strong>Visual style shifted and systems emerged.</strong> Moved from a PSX-style aesthetic to a more realistic and atmospheric tone (still evolving). Developed concept art and behavior ideas for enemies. Prototyped early systems like inventory and interactions. Brainstormed studio identity and online presence.</p>
-    </div>
-  </div>
+    <!-- 👇 Devlog toggle-knapp -->
+    <button class="button toggle-log" onclick="toggleLog()">
+      &lt;devlog&gt;
+    </button>
 
-  <div class="timeline-block">
-    <div class="timeline-date">May 2025</div>
-    <div class="timeline-entry-box">
-      <h3><strong>Website Launch & Narrative Expansion</strong></h3>
-      <p><strong>Online presence established, story deepened.</strong> The Snowrift website is now live. Narrative threads and character backstories expanded. More concept art in development, and internal tools for layout and scene structure are being tested to support efficient progress moving forward.</p>
-    </div>
-  </div>
-</section>
+    <!-- 👇 Devlog-innehåll (dold som standard) -->
+    <section id="devlog" class="timeline-list hidden">
+      <div class="timeline-block">
+        <div class="timeline-date">March 2025</div>
+        <div class="timeline-entry-box">
+          <h3><strong>Project Setup & First Prototype</strong></h3>
+          <p><strong>Focused on structure and gameplay basics.</strong> Established the Unity project foundation, defined the narrative direction, and outlined core mechanics. Early concepts for enemies and story beats were created. A playable prototype with basic movement and door/key interaction was implemented.</p>
+        </div>
+      </div>
+
+      <div class="timeline-block">
+        <div class="timeline-date">April 2025</div>
+        <div class="timeline-entry-box">
+          <h3><strong>Visual Direction & Early Systems</strong></h3>
+          <p><strong>Visual style shifted and systems emerged.</strong> Moved from a PSX-style aesthetic to a more realistic and atmospheric tone (still evolving). Developed concept art and behavior ideas for enemies. Prototyped early systems like inventory and interactions. Brainstormed studio identity and online presence.</p>
+        </div>
+      </div>
+
+      <div class="timeline-block">
+        <div class="timeline-date">May 2025</div>
+        <div class="timeline-entry-box">
+          <h3><strong>Website Launch & Narrative Expansion</strong></h3>
+          <p><strong>Online presence established, story deepened.</strong> The Snowrift website is now live. Narrative threads and character backstories expanded. More concept art in development, and internal tools for layout and scene structure are being tested to support efficient progress moving forward.</p>
+        </div>
+      </div>
+    </section>
   </main>
 
-<footer class="site-footer">
-  <div class="header-container">
-    <p>&copy; 2025 Snowrift Interactive</p>
-  </div>
-</footer>
-  
+  <footer class="site-footer">
+    <div class="header-container">
+      <p>&copy; 2025 Snowrift Interactive</p>
+    </div>
+  </footer>
+
   <script>
-  const blocks = document.querySelectorAll('.timeline-block');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // bara en gång per block
-      }
-    });
-  }, { threshold: 0.1 });
+    // 👇 Toggle <devlog> / </devlog>
+    function toggleLog() {
+      const log = document.getElementById("devlog");
+      const button = document.querySelector(".toggle-log");
 
-  blocks.forEach(block => observer.observe(block));
-</script>
+      const isHidden = log.classList.toggle("hidden");
+      button.innerHTML = isHidden
+        ? '&lt;devlog&gt;'
+        : '&lt;/devlog&gt;';
+    }
 
+    // 👇 Fade-in effect for log blocks
+    const blocks = document.querySelectorAll('.timeline-block');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    blocks.forEach(block => observer.observe(block));
+  </script>
 </body>
 </html>
