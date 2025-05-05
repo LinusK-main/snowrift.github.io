@@ -40,7 +40,9 @@ body {
   text-align: left;
 }
 
-
+.site-footer p {
+  padding-left: 10px; /* eller margin-left: 10px; */
+}
 
 .header-container {
   display: flex;
