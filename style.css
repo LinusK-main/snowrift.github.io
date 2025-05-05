@@ -222,11 +222,18 @@ main a:hover {
   justify-content: flex-start;
 }
 
+/* Standard (alla sidor) */
 .external-links {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: flex-start; /* vänsterjusterad som standard */
+}
+
+/* Undantag för startsidan */
+body.home .external-links {
+  justify-content: center; /* centrera knapparna */
 }
 
 /* === Timeline Stacked Card Style === */
