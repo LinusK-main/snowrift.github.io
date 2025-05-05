@@ -347,16 +347,19 @@ body.home .external-links {
   gap: 0.2rem; /* Justera gapet för att minska avståndet mellan rubrik och text */
 }
 
-.devlog-header + p {
-  margin-top: 0.3rem; /* Minska avståndet till texten direkt under rubriken */
+.devlog-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-direction: column;
+  margin-bottom: 0.5rem; /* justera avståndet mellan header och text */
 }
 
 .devlog-summary {
-  font-size: 1.1rem;
-  color: #ddd;
-  margin-top: 0.5rem;  /* Justera gapet här */
-  margin-bottom: 2rem;
-  line-height: 1.5;
+  margin-top: 0.5rem; /* minskar avståndet från rubriken */
+  font-size: 1rem;
+  color: var(--color-text);
+  text-align: left;
 }
 
 @media screen and (max-width: 768px) {
