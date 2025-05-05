@@ -75,5 +75,20 @@
   <footer class="site-footer">
     <p>&copy; 2025 Snowrift Interactive</p>
   </footer>
+  
+  <script>
+  const blocks = document.querySelectorAll('.timeline-block');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // bara en gång per block
+      }
+    });
+  }, { threshold: 0.1 });
+
+  blocks.forEach(block => observer.observe(block));
+</script>
+
 </body>
 </html>
