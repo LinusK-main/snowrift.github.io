@@ -426,7 +426,7 @@ main a:hover {
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid var(--color-accent);
-  animation: typing 3s steps(50, end), blink 1s step-end 3s 4;
+  animation: typing 2s steps(50, end), blink 1s step-end 2s 2;
 }
 
 .fade-after-type {
