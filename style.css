@@ -353,6 +353,6 @@ body.home .external-links {
   font-size: 1rem;
   color: var(--color-text);
   text-align: left;
-  line-height: 1.6; /* Vanligt radavstånd för texten */
+  line-height: 1; /* Vanligt radavstånd för texten */
 }
 
