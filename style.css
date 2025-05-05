@@ -344,12 +344,13 @@ body.home .external-links {
 .devlog-header {
   display: flex;
   align-items: center;
-  gap: 0.2rem; /* Justera gapet för att minska avståndet mellan rubrik och text */
+  gap: 0.5rem; /* Avstånd mellan rubrik, pil och knapp */
 }
 
 .devlog-summary {
-  margin-top: 0.25rem;  /* Lägger till lite avstånd mellan rubriken och texten */
+  margin-top: 1rem;  /* Lägger till lite utrymme under headern */
   font-size: 1rem;
   color: var(--color-text);
   text-align: left;
 }
+
