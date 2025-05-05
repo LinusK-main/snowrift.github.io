@@ -230,7 +230,7 @@ main a:hover {
 
 .timeline-block {
   position: relative;
-  margin: 3rem 0;
+  margin: 2rem 0;
   padding-left: 1rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   z-index: 1;
@@ -243,7 +243,7 @@ main a:hover {
 }
 
 .timeline-block:not(:last-child) {
-  margin-bottom: -2rem;
+  margin-bottom: -1.5rem;
 }
 
 .timeline-date {
@@ -252,7 +252,7 @@ main a:hover {
   font-size: 1rem;
   margin-bottom: 0.75rem;
   display: block;
-  padding-left: 0.5rem;
+  padding-left: 0.25rem;
 }
 
 .timeline-entry-box {
@@ -260,7 +260,7 @@ main a:hover {
   border-radius: 10px;
   padding: 1.5rem;
   margin-left: 0.25rem;
-  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   position: relative;
   z-index: 2;
 }
