@@ -129,7 +129,7 @@ h1.main-heading {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: var(--color-text);
-  text-align: left;
+  text-align: center;
 }
 
 .subtitle {
@@ -137,7 +137,7 @@ h1.main-heading {
   color: #aaa;
   margin-bottom: 2rem;
   font-style: italic;
-  text-align: left;
+  text-align: center;
 }
 
 .typewriter {
@@ -188,6 +188,7 @@ h2 {
 p {
   font-size: 1.1rem;
   color: var(--color-text);
+  text-align: center;
 }
 
 main a {
@@ -229,6 +230,7 @@ main a:hover {
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: center;
 }
 
 /* === Timeline Stacked Card Style === */
@@ -281,6 +283,7 @@ main a:hover {
 .timeline-entry-box p {
   margin: 0;
   color: #eee;
+  text-align: left;
 }
 
 @media screen and (max-width: 768px) {
