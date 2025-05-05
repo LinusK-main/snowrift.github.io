@@ -466,3 +466,38 @@ main a:hover {
   transform: scale(1) translateY(0);
 }
 
+/* === Kortstapel-effekt för devlog === */
+.timeline-list {
+  display: flex;
+  flex-direction: column-reverse; /* Gör så att nyaste kortet kommer först */
+  gap: 2rem;
+  position: relative;
+}
+
+.timeline-block {
+  position: relative;
+  transform-origin: top center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Stapla kort för effekt */
+.timeline-block:nth-child(1) {
+  z-index: 3;
+  transform: translateY(0px) scale(1);
+}
+
+.timeline-block:nth-child(2) {
+  z-index: 2;
+  transform: translateY(10px) scale(0.98);
+}
+
+.timeline-block:nth-child(3) {
+  z-index: 1;
+  transform: translateY(20px) scale(0.96);
+}
+
+.timeline-block:nth-child(n+4) {
+  opacity: 0.85;
+  transform: translateY(30px) scale(0.94);
+}
+
