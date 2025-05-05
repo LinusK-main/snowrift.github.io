@@ -161,7 +161,7 @@ main a:hover {
 
 .timeline-list {
   position: relative;
-  margin: 4rem auto;
+  margin: 2.5rem auto 4rem auto;
   max-width: 900px;
   padding-left: 2rem;
   border-left: 4px solid var(--color-accent);
