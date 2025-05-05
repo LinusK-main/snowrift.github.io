@@ -271,6 +271,7 @@ body.home .external-links {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+  margin-bottom: 2rem; /* Justerade margin mellan varje kort */
 }
 
 .timeline-list.visible .timeline-block {
@@ -352,12 +353,12 @@ body.home .external-links {
     border-left: 2px solid var(--color-accent);
   }
 
-.timeline-block {
-  position: relative;
-  margin: 10rem 0 10rem; /* Här har vi lagt till margin-bottom för att skapa mer utrymme */
-  padding-left: 1rem;
-  z-index: 1;
-}
+  .timeline-block {
+    position: relative;
+    margin-bottom: 2rem; /* Uppdaterad margin */
+    padding-left: 1rem;
+    z-index: 1;
+  }
 
   .timeline-date {
     font-size: 0.95rem;
