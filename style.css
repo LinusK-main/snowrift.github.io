@@ -347,6 +347,14 @@ body.home .external-links {
   gap: 0.5rem;
 }
 
+.devlog-summary {
+  font-size: 1.1rem;
+  color: #ddd;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
 @media screen and (max-width: 768px) {
   .timeline-list {
     padding-left: 1rem;
