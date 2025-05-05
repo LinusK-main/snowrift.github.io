@@ -356,3 +356,14 @@ body.home .external-links {
   line-height: 1.6; /* Vanligt radavstånd för texten */
 }
 
+h2.section-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem; /* Detta skapar spacing till .devlog-summary */
+}
+
+#toggle-indicator {
+  font-size: 1.2rem;
+  color: var(--color-accent);
+}
