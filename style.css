@@ -352,9 +352,12 @@ body.home .external-links {
     border-left: 2px solid var(--color-accent);
   }
 
-  .timeline-block {
-    margin: 2rem 0;
-  }
+.timeline-block {
+  position: relative;
+  margin: 2rem 0 2rem; /* Här har vi lagt till margin-bottom för att skapa mer utrymme */
+  padding-left: 1rem;
+  z-index: 1;
+}
 
   .timeline-date {
     font-size: 0.95rem;
