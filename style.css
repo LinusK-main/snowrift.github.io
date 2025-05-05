@@ -228,6 +228,17 @@ main a:hover {
   display: none;
 }
 
+.arrow-icon {
+  font-size: 1rem;
+  color: var(--color-accent);
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+.arrow-icon.rotate {
+  transform: rotate(90deg);
+}
+
 .external-links.center {
   justify-content: center;
 }
