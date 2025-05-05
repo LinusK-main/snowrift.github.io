@@ -1,4 +1,4 @@
-/* === Snowrift Interactive – Dark Refined (Cleaned) === */
+/* === Snowrift Interactive – Dark Refined (Optimized Vertical Spacing + Mobile Devlog) === */
 
 :root {
   --color-bg: #181818;
@@ -80,7 +80,7 @@ body {
 }
 
 main {
-  padding: 6rem 2rem 2rem;
+  padding: 5rem 2rem 2rem;
   max-width: 800px;
   margin: auto;
   opacity: 0;
@@ -115,7 +115,7 @@ h1.main-heading {
 h2 {
   color: var(--color-text);
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 p {
@@ -161,14 +161,14 @@ main a:hover {
 
 .timeline-list {
   position: relative;
-  margin: 1rem auto 4rem auto;
+  margin: 0.25rem auto 4rem auto;
   max-width: 900px;
   padding-left: 2rem;
   border-left: 4px solid var(--color-accent);
 }
 
 .timeline-block {
-  margin: 3rem 0;
+  margin: 2rem 0;
   padding-left: 1rem;
   position: relative;
 }
@@ -188,12 +188,11 @@ main a:hover {
 }
 
 .timeline-entry-box h3 {
-  font-weight: 400; /* eller 500 om du vill ha ännu lite mjukare */
+  font-weight: 500;
   font-size: 1.3rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
 }
-
 
 .timeline-entry-box p {
   margin: 0;
@@ -217,7 +216,6 @@ main a:hover {
   flex: 1 1 500px;
   text-align: center;
 }
-
 
 .about-image {
   flex: 0 1 250px;
@@ -274,7 +272,6 @@ main a:hover {
 
 /* === Responsive scaling for common resolutions === */
 
-/* För vanliga 1080p-skärmar och mindre */
 @media screen and (max-width: 1920px) {
   h1.main-heading {
     font-size: 2.2rem;
@@ -294,7 +291,6 @@ main a:hover {
   }
 }
 
-/* För laptop eller mindre desktopskärmar */
 @media screen and (max-width: 1440px) {
   h1.main-heading {
     font-size: 2rem;
@@ -314,7 +310,6 @@ main a:hover {
   }
 }
 
-/* För riktigt små skärmar (mobiler etc.) */
 @media screen and (max-width: 768px) {
   h1.main-heading {
     font-size: 1.6rem;
@@ -336,5 +331,32 @@ main a:hover {
   .main-nav {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+/* === Extra media queries for mobile-friendly devlog === */
+
+@media screen and (max-width: 600px) {
+  .timeline-list {
+    padding-left: 1rem;
+    border-left: 2px solid var(--color-accent);
+  }
+
+  .timeline-block {
+    margin: 1.5rem 0;
+    padding-left: 0.5rem;
+  }
+
+  .timeline-entry-box {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .timeline-entry-box h3 {
+    font-size: 1.1rem;
+  }
+
+  .timeline-date {
+    font-size: 1rem;
   }
 }
