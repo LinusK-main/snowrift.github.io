@@ -161,7 +161,7 @@ main a:hover {
 
 .timeline-list {
   position: relative;
-  margin: 1.5rem auto 4rem auto;
+  margin: 1rem auto 4rem auto;
   max-width: 900px;
   padding-left: 2rem;
   border-left: 4px solid var(--color-accent);
@@ -188,7 +188,7 @@ main a:hover {
 }
 
 .timeline-entry-box h3 {
-  font-weight: 300; /* eller 500 om du vill ha ännu lite mjukare */
+  font-weight: 400; /* eller 500 om du vill ha ännu lite mjukare */
   font-size: 1.3rem;
   margin-top: 0;
   margin-bottom: 0.5rem;
