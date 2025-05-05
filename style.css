@@ -354,7 +354,7 @@ body.home .external-links {
 
 .timeline-block {
   position: relative;
-  margin: 2rem 0 2rem; /* Här har vi lagt till margin-bottom för att skapa mer utrymme */
+  margin: 10rem 0 10rem; /* Här har vi lagt till margin-bottom för att skapa mer utrymme */
   padding-left: 1rem;
   z-index: 1;
 }
