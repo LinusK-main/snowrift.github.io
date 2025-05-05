@@ -350,6 +350,7 @@ body.home .external-links {
 .devlog-summary {
   font-size: 1.1rem;
   color: #ddd;
+  margin-top: 0.5rem;  /* Justera gapet här */
   margin-bottom: 2rem;
   line-height: 1.5;
 }
