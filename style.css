@@ -66,6 +66,7 @@ body {
 }
 
 .main-nav a {
+  position: relative;
   color: var(--color-text);
   text-decoration: none;
   font-size: 0.9rem;
@@ -73,10 +74,25 @@ body {
   transition: color 0.3s;
 }
 
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}
+
 .main-nav a:hover,
 .main-nav a.active {
   color: var(--color-accent);
-  text-decoration: underline;
 }
 
 main {
