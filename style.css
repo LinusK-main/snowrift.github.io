@@ -322,7 +322,7 @@ body.home .external-links {
   cursor: pointer;
   transition: color 0.3s;
   font-size: 2rem;
-  padding: 0;
+  padding: 2;
 }
 
 .toggle-button:hover {
