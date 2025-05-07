@@ -1,9 +1,50 @@
-/* Mobil-specifik styling */
+/* === Mobil-specifik styling för Snowrift Interactive === */
+
+/* Flyttade utanför media query — krävs alltid */
+@keyframes menuFade {
+  0% { opacity: 0; transform: scaleY(0.9); }
+  100% { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes menuFadeOut {
+  0% { opacity: 1; transform: scaleY(1); }
+  100% { opacity: 0; transform: scaleY(0.9); }
+}
+
 @media screen and (max-width: 768px) {
   .menu-toggle {
-    z-index: 10000;
     display: block;
-    margin-left: auto;
+    z-index: 10000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .menu-toggle .bar {
+    display: block;
+    width: 24px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--color-text);
+    transition: all 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .menu-toggle:hover .bar {
+    background-color: var(--color-accent);
+  }
+
+  .menu-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
   }
 
   .main-nav {
@@ -22,16 +63,15 @@
     left: 2rem;
     z-index: 998;
     transform-origin: top;
-    animation: menuFade 0.3s ease forwards;
-  }
-
-  .main-nav.fade-out {
-    animation: menuFadeOut 0.3s ease forwards;
   }
 
   .main-nav.active {
     display: flex;
     animation: menuFade 0.3s ease forwards;
+  }
+
+  .main-nav.fade-out {
+    animation: menuFadeOut 0.3s ease forwards;
   }
 
   .header-container {
@@ -45,15 +85,4 @@
   main {
     padding-top: 6rem;
   }
-}
-
-/* Flytta dessa UTANFÖR @media */
-@keyframes menuFade {
-  0% { opacity: 0; transform: scaleY(0.9); }
-  100% { opacity: 1; transform: scaleY(1); }
-}
-
-@keyframes menuFadeOut {
-  0% { opacity: 1; transform: scaleY(1); }
-  100% { opacity: 0; transform: scaleY(0.9); }
 }
