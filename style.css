@@ -160,54 +160,6 @@ main {
   100% { opacity: 0; transform: scaleY(0.9); }
 }
 
-@media screen and (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-    margin-left: auto;
-  }
-
-  .main-nav {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    background-color: var(--color-bg);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    border-radius: 6px;
-    padding: 1rem 0;
-    position: absolute;
-    top: 100%;
-    right: 2rem;
-    left: 2rem;
-    z-index: 998;
-    transform-origin: top;
-    animation: menuFade 0.3s ease forwards;
-  }
-
-  .main-nav.fade-out {
-    animation: menuFadeOut 0.3s ease forwards;
-  }
-
-  .main-nav.active {
-    display: flex;
-  }
-
-  .header-container {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    width: 100%;
-  }
-
-  main {
-    padding-top: 6rem;
-  }
-}
-
-/* === Resterande Snowrift Interactive CSS === */
-
 .center {
   text-align: center;
 }
