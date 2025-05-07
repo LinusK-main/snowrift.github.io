@@ -80,8 +80,17 @@
       menuToggle.classList.remove('animate-pop');
     }, 300);
   });
-</script>
 
+  // Stäng meny om man klickar på en länk
+  document.querySelectorAll('.main-nav a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (mainNav.classList.contains('active')) {
+        mainNav.classList.remove('active');
+        menuToggle.classList.remove('active');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
