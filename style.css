@@ -1,4 +1,4 @@
-/* === Snowrift Interactive – Dark Refined (Optimized Vertical Spacing + Mobile Devlog + Card Stack Effect) === */
+/* === Snowrift Interactive === */
 
 :root {
   --color-bg: #181818;
@@ -67,6 +67,11 @@ body {
 .main-nav {
   display: flex;
   gap: 1rem;
+  transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
+  max-height: 500px;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .main-nav a {
@@ -75,7 +80,36 @@ body {
   text-decoration: none;
   font-size: 0.9rem;
   letter-spacing: 1px;
-  transition: color 0.3s;
+  transition: color 0.3s, opacity 0.4s ease, transform 0.4s ease;
+  opacity: 0;
+  transform: translateY(-5px);
+}
+
+.main-nav.active a {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main-nav:not(.active) a {
+  opacity: 0;
+  transform: translateY(-5px);
+  transition-delay: 0s !important;
+}
+
+.main-nav.active a:nth-child(1) {
+  transition-delay: 0.05s;
+}
+
+.main-nav.active a:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.main-nav.active a:nth-child(3) {
+  transition-delay: 0.15s;
+}
+
+.main-nav.active a:nth-child(4) {
+  transition-delay: 0.2s;
 }
 
 .main-nav a::after {
@@ -99,6 +133,69 @@ body {
   color: var(--color-accent);
 }
 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: color 0.3s, transform 0.2s, box-shadow 0.3s, background-color 0.3s;
+  border-radius: 6px;
+  padding: 0.3rem 0.6rem;
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  will-change: transform;
+}
+
+.menu-toggle:hover {
+  color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.menu-toggle:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px auto;
+  background-color: var(--color-text);
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.animate-pop {
+  animation: pop-toggle 0.3s ease;
+}
+
+@keyframes pop-toggle {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 main {
   padding: 5rem 2rem 2rem;
   max-width: 800px;
@@ -115,281 +212,33 @@ main {
   }
 }
 
-.center {
-  text-align: center;
-}
-
-.left {
-  text-align: left;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-}
-
-h1.main-heading {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: var(--color-text);
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  color: #aaa;
-  margin-bottom: 1rem;
-  font-style: italic;
-}
-
-.typewriter {
-  display: inline-block;
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid var(--color-accent);
-  animation: typing 3.5s steps(40, end), blink 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 60% }
-}
-
-@keyframes blink {
-  50% { border-color: transparent }
-}
-
-.fade-after-type {
-  opacity: 0;
-  animation: fadeInText 1s ease forwards;
-  animation-delay: 3.5s;
-}
-
-@keyframes fadeInText {
-  to {
-    opacity: 1;
-  }
-}
-
-h2 {
-  color: var(--color-text);
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  text-align: left;
-}
-
-.section-title {
-  text-align: left;
-  font-size: 2.2rem;
-  margin-bottom: 1.5rem;
-  padding: 0.5rem 0;
-  background: none;
-  box-shadow: none;
-}
-
-p {
-  font-size: 1.1rem;
-  color: var(--color-text);
-}
-
-main a {
-  color: var(--color-accent);
-  text-decoration: none;
-}
-
-main a:hover {
-  text-decoration: underline;
-}
-
-.button {
-  display: inline-block;
-  background-color: var(--color-accent);
-  color: var(--color-text);
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
-  margin: 0.5rem;
-  border: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.button:hover {
-  background-color: var(--color-accent-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-}
-
-.button:active {
-  transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  scale: 0.97;
-}
-
-.hidden {
-  display: none;
-}
-
-.external-links.center {
-  justify-content: center;
-}
-
-.external-links.left {
-  justify-content: flex-start;
-}
-
-.external-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-  justify-content: flex-start;
-}
-
-body.home .external-links {
-  justify-content: center;
-}
-
-.timeline-list {
-  position: relative;
-  max-width: 900px;
-  margin: 2rem auto;
-  padding-left: 2rem;
-  border-left: 4px solid var(--color-accent);
-  overflow-x: hidden;
-  opacity: 0;
-  max-height: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease, transform 0.6s ease, max-height 0.6s ease;
-}
-
-.timeline-list.visible {
-  opacity: 1;
-  max-height: 5000px;
-  transform: translateY(0);
-}
-
-.timeline-block {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  margin-bottom: 2rem; /* Justerade margin mellan varje kort */
-}
-
-.timeline-list.visible .timeline-block {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.timeline-list.visible .timeline-block:nth-child(1) { transition-delay: 0.1s; }
-.timeline-list.visible .timeline-block:nth-child(2) { transition-delay: 0.25s; }
-.timeline-list.visible .timeline-block:nth-child(3) { transition-delay: 0.4s; }
-
-.timeline-date {
-  color: var(--color-accent);
-  font-weight: bold;
-  font-size: 1rem;
-  margin-bottom: 0.75rem;
-  display: block;
-  padding-left: 0.25rem;
-}
-
-.timeline-entry-box {
-  background-color: #222;
-  border-radius: 10px;
-  padding: 1.5rem;
-  margin-left: 0.25rem;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
-
-.timeline-entry-box h3 {
-  font-weight: 500;
-  font-size: 1.3rem;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-}
-
-.timeline-entry-box p {
-  margin: 0;
-  color: #eee;
-}
-
-.toggle-button {
-  background: none;
-  border: none;
-  color: var(--color-accent);
-  font-weight: bold;
-  cursor: pointer;
-  transition: color 0.3s;
-  font-size: 1.5rem;
-  padding: 2;
-}
-
-.toggle-button:hover {
-  color: var(--color-accent-hover);
-  text-decoration: underline;
-}
-
-.arrow-icon {
-  font-size: 1rem;
-  color: var(--color-accent);
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
-.arrow-icon.rotate {
-  transform: rotate(90deg);
-}
-
-.devlog-header {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem; 
-  margin-bottom: 0;
-}
-
-.devlog-summary {
-  margin-top: 0.2rem;
-  font-size: 1rem;
-  color: var(--color-text);
-  text-align: left;
-  line-height: 1.6; /* Vanligt radavstånd för texten */
-}
-
-h2.section-title {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem; /* Detta skapar spacing till .devlog-summary */
-}
-
-#toggle-indicator {
-  font-size: 2rem; /* eller större som 2rem, 3rem osv */
-  color: var(--color-accent);
-  transition: transform 0.3s ease;
-  display: inline-block;
-}
-
 @media screen and (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
   }
 
   .main-nav {
+    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
     margin-top: 1rem;
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
   }
 
-  .main-nav a {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
+  .main-nav.active {
+    max-height: 500px;
+    opacity: 1;
+    transform: translateY(0);
   }
 
-  main {
-    padding: 6rem 1rem 2rem;
+  .header-container {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
   }
-}
