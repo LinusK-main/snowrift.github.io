@@ -8,13 +8,8 @@
   100% { opacity: 0; transform: scaleY(0.9); }
 }
 
-@media screen and (max-width: 768px) {
-  .header-container {
-    position: relative; 
-  }
-
   .menu-toggle {
-    position: absolute;
+    position: relative;
     top: 50%;
     right: 0.5rem;
     transform: translateY(-50%);
@@ -24,6 +19,10 @@
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    margin: 1rem auto;
+    background-color: red;
+    width: 40px;
+    height: 40px;
   }
 
   .menu-toggle .bar {
@@ -31,7 +30,7 @@
     width: 24px;
     height: 3px;
     margin: 5px auto;
-    background-color: var(--color-text);
+    background-color: white;
     transition: all 0.3s ease;
     border-radius: 2px;
   }
