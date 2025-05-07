@@ -161,11 +161,10 @@ main {
 }
 
 @media screen and (max-width: 768px) {
-  .main-nav.active {
-    display: flex !important;
-    animation: menuFade 0.3s ease forwards;
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
   }
-}
 
   .main-nav {
     display: none;
