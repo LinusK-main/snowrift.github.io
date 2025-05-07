@@ -15,9 +15,12 @@
 </a>
 
         <!-- Hamburger icon for phones and smaller screens -->
-        <button class="menu-toggle" aria-label="Toggle menu">
-        &#9776;
-        </button>
+<button class="menu-toggle" aria-label="Toggle menu">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
+
       
         <!-- Nav menu for larger screens -->
         <nav class="main-nav">
@@ -58,9 +61,15 @@
   const menuToggle = document.querySelector('.menu-toggle');
   const mainNav = document.querySelector('.main-nav');
 
-  menuToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('active');
-  });
+menuToggle.addEventListener('click', () => {
+  mainNav.classList.toggle('active');
+  menuToggle.classList.toggle('active');
+  menuToggle.classList.add('animate-pop');
+  setTimeout(() => {
+    menuToggle.classList.remove('animate-pop');
+  }, 300);
+});
+
 </script>
 
 </body>
