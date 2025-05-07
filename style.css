@@ -1,4 +1,4 @@
-/* === Snowrift Interactive === */
+/* === Snowrift Interactive Combined CSS (Original + Hamburger Menu) === */
 
 :root {
   --color-bg: #181818;
@@ -64,6 +64,41 @@ body {
   filter: brightness(1.1);
 }
 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 24px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: var(--color-text);
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.menu-toggle:hover .bar {
+  background-color: var(--color-accent);
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 .main-nav {
   display: flex;
   gap: 1rem;
@@ -114,6 +149,64 @@ main {
     transform: translateY(0);
   }
 }
+
+@keyframes menuFade {
+  0% { opacity: 0; transform: scaleY(0.9); }
+  100% { opacity: 1; transform: scaleY(1); }
+}
+
+@keyframes menuFadeOut {
+  0% { opacity: 1; transform: scaleY(1); }
+  100% { opacity: 0; transform: scaleY(0.9); }
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    background-color: var(--color-bg);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-radius: 6px;
+    padding: 1rem 0;
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    left: 2rem;
+    z-index: 998;
+    transform-origin: top;
+    animation: menuFade 0.3s ease forwards;
+  }
+
+  .main-nav.fade-out {
+    animation: menuFadeOut 0.3s ease forwards;
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  main {
+    padding-top: 6rem;
+  }
+}
+
+/* === Resterande Snowrift Interactive CSS === */
 
 .center {
   text-align: center;
@@ -271,7 +364,7 @@ body.home .external-links {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
-  margin-bottom: 2rem; /* Justerade margin mellan varje kort */
+  margin-bottom: 2rem;
 }
 
 .timeline-list.visible .timeline-block {
@@ -353,43 +446,19 @@ body.home .external-links {
   font-size: 1rem;
   color: var(--color-text);
   text-align: left;
-  line-height: 1.6; /* Vanligt radavstånd för texten */
+  line-height: 1.6;
 }
 
 h2.section-title {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-bottom: 0.5rem; /* Detta skapar spacing till .devlog-summary */
+  margin-bottom: 0.5rem;
 }
 
 #toggle-indicator {
-  font-size: 2rem; /* eller större som 2rem, 3rem osv */
+  font-size: 2rem;
   color: var(--color-accent);
   transition: transform 0.3s ease;
   display: inline-block;
-}
-
-@media screen and (max-width: 768px) {
-  .header-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  }
-
-  .main-nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 1rem;
-  }
-
-  .main-nav a {
-    font-size: 1rem;
-    padding: 0.5rem 1rem;
-  }
-
-  main {
-    padding: 6rem 1rem 2rem;
-  }
 }
