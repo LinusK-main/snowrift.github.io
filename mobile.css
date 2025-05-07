@@ -1,6 +1,7 @@
 /* Mobil-specifik styling */
 @media screen and (max-width: 768px) {
   .menu-toggle {
+    z-inde: 10000;
     display: block;
     margin-left: auto;
   }
