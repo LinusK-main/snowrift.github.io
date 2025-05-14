@@ -92,26 +92,33 @@
   const button = document.getElementById("subscribe-button");
   const emailInput = document.getElementById("email");
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    const formData = new FormData(form);
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
+  // Visa laddande text direkt
+  button.textContent = "Subscribing...";
+  button.disabled = true;
+  response.textContent = "";
+
+  const formData = new FormData(form);
+  fetch(form.action, {
+    method: "POST",
+    body: formData,
+  })
+    .then(() => {
+      emailInput.value = "Thanks for signing up! ✌️";
+      emailInput.disabled = true;
+      button.textContent = "Subscribed ✅";
+      response.textContent = "";
     })
-      .then(() => {
-        emailInput.value = "Thanks for signing up! ✌️";
-        emailInput.disabled = true;
-        button.textContent = "Subscribed ✅";
-        button.disabled = true;
-        response.textContent = "";
-      })
-      .catch(() => {
-        response.textContent = "Something went wrong. Please try again later.";
-        response.style.color = "#ff4d4d";
-      });
-  });
+    .catch(() => {
+      button.textContent = "Subscribe";
+      button.disabled = false;
+      response.textContent = "Something went wrong. Please try again later.";
+      response.style.color = "#ff4d4d";
+    });
+});
+
 </script>
 
 
