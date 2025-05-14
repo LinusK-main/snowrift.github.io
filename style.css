@@ -384,56 +384,72 @@ h2.section-title {
   display: none;
 }
 
-.newsletter-signup {
-    text-align: center;
-    padding: 2rem;
-    max-width: 500px;
-    margin: 4rem auto;
-  }
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
 
-  .newsletter-signup h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-  }
+.footer-left {
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
 
-  .newsletter-signup p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: #888;
-  }
+.newsletter-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
 
-  .newsletter-signup input[type="email"] {
-    padding: 0.6rem;
-    font-size: 1rem;
-    width: 70%;
-    max-width: 300px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 0.5rem;
-  }
+.newsletter-inline input[type="email"] {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
 
-  .newsletter-signup button {
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-    background-color: #222;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
+.newsletter-inline button {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-  .newsletter-signup button:hover {
-    background-color: #444;
-  }
+.newsletter-inline button:hover {
+  background-color: var(--color-accent-hover);
+}
 
-  .form-consent {
-    font-size: 0.8rem;
-    color: #777;
-    margin-top: 0.5rem;
-  }
+.form-response {
+  margin-left: 1rem;
+  font-size: 0.9rem;
+  color: var(--color-accent);
+}
 
-  .form-response {
-    font-size: 1rem;
-    color: green;
-    margin-top: 1rem;
-  }
+.consent-text {
+  position: absolute;
+  bottom: -1.5rem;
+  left: 0;
+  font-size: 0.7rem;
+  color: #aaa;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  width: 100%;
+}
+
+.newsletter-inline:hover .consent-text,
+.newsletter-inline input:focus ~ .consent-text,
+.newsletter-inline button:focus ~ .consent-text {
+  opacity: 1;
+  pointer-events: auto;
+}
