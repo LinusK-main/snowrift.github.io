@@ -385,15 +385,15 @@ h2.section-title {
   display: none;
 }
 
-  .footer-container {
-    display: flex-start;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 1rem 2rem;
-    max-width: 1200px;
-    margin: auto;
-  }
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
 
   .footer-left {
     color: var(--color-text);
