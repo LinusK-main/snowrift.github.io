@@ -70,35 +70,26 @@
   </main>
 
 <footer class="site-footer">
-  <div class="header-container">
-    <p>&copy; 2025 Snowrift Interactive</p>
+  <div class="footer-container">
+    <p class="footer-left">&copy; 2025 Snowrift Interactive</p>
+
+    <form id="newsletter-form" action="https://script.google.com/macros/s/AKfycbyFFDq0ryGqWo4S0yUoOtIOqyDy2-LTEEj1X_nCcKz5PvKK_smMJ3fYgdTVe4M6l7JU/exec" method="POST" class="newsletter-inline">
+      <input type="email" name="email" id="email" placeholder="Your email address" required />
+      <button type="submit" id="subscribe-button">Subscribe</button>
+      <span id="newsletter-response" class="form-response"></span>
+      <span class="consent-text">
+        By signing up, you consent to us storing your email address for the purpose of sending development updates and release news. You can unsubscribe at any time. We never share your data.
+      </span>
+    </form>
   </div>
-
-<section class="newsletter-signup">
-  <h2>Want updates?</h2>
-  <p>
-    I promise not to spam. Just important updates — when development hits a milestone or the game gets closer to release.
-  </p>
-
-  <form id="newsletter-form" action="https://script.google.com/macros/s/AKfycbyFFDq0ryGqWo4S0yUoOtIOqyDy2-LTEEj1X_nCcKz5PvKK_smMJ3fYgdTVe4M6l7JU/exec" method="POST">
-    <input type="email" name="email" placeholder="Your email address" required>
-    <button type="submit">Subscribe</button>
-  </form>
-
-  <p class="form-consent">
-    By signing up, you consent to us storing your email address for the purpose of sending development updates and release news.
-    You can unsubscribe at any time. We never share your data.
-  </p>
-
-  <p id="newsletter-response" class="form-response" style="display:none;">Thanks for signing up! ✌️</p>
-</section>
-
-  
 </footer>
 
-    <script>
+
+<script>
   const form = document.getElementById("newsletter-form");
   const response = document.getElementById("newsletter-response");
+  const button = document.getElementById("subscribe-button");
+  const emailInput = document.getElementById("email");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -109,16 +100,19 @@
       body: formData,
     })
     .then(() => {
-      form.reset();
-      response.textContent = "Thanks for signing up! ✌️";
-      response.style.display = "block";
+      emailInput.value = "Thanks for signing up! ✌️";
+      emailInput.disabled = true;
+      button.textContent = "Subscribed ✅";
+      button.disabled = true;
+      response.textContent = "";
     })
     .catch(() => {
       response.textContent = "Something went wrong. Please try again later.";
-      response.style.display = "block";
+      response.style.color = "#ff4d4d";
     });
   });
 </script>
+
   
 <!-- 
   
