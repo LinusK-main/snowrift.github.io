@@ -442,34 +442,36 @@ h2.section-title {
     color: var(--color-accent);
   }
 
-  .tooltip-bubble {
-    position: absolute;
-    bottom: 125%;
-    left: 0;
-    background-color: #333;
-    color: #fff;
-    padding: 0.7rem;
-    border-radius: 8px;
-    font-size: 0.7rem;
-    opacity: 0;
-    transform: scale(0.8);
-    transform-origin: bottom left;
-    transition: opacity 0.3s ease, transform 0.5s ease;
-    width: 250px;
-    pointer-events: none;
-    z-index: 10;
-  }
+.tooltip-bubble {
+  display: none;
+  position: absolute;
+  bottom: 125%;
+  left: 0;
+  background-color: #333;
+  color: #fff;
+  padding: 0.7rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  width: 260px;
+  z-index: 10;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
-  .tooltip-arrow {
-    position: absolute;
-    top: 100%;
-    left: 1rem;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-top: 8px solid #333;
-  }
+.tooltip-bubble.active {
+  display: block;
+}
+
+.tooltip-arrow {
+  position: absolute;
+  top: 100%;
+  left: 1rem;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #333;
+}
 
   .newsletter-inline:hover .tooltip-bubble {
     opacity: 1;
@@ -494,3 +496,11 @@ h2.section-title {
   margin-bottom: 0.3rem;
 }
 
+.info-button {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  color: var(--color-accent);
+}
