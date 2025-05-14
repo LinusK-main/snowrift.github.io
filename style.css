@@ -481,3 +481,9 @@ h2.section-title {
   color: var(--color-text);
   margin-bottom: 0.3rem;
 }
+
+.label-wrapper {
+  width: 100%;
+  margin-bottom: 0.3rem;
+}
+
