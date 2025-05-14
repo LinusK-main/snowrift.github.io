@@ -73,20 +73,21 @@
     <p class="footer-left">&copy; 2025 Snowrift Interactive</p>
 
     <div class="footer-right">
-      <div class="newsletter-wrapper">
-      <label for="email" class="newsletter-label">Sign up for our newsletter</label>
-      <form id="newsletter-form" action="https://script.google.com/macros/s/AKfycbyFFDq0ryGqWo4S0yUoOtIOqyDy2-LTEEj1X_nCcKz5PvKK_smMJ3fYgdTVe4M6l7JU/exec" method="POST" class="newsletter-inline">
-        <input type="email" name="email" id="email" placeholder="Your email address" required />
-        <button type="submit" id="subscribe-button">Subscribe</button>
-        <span id="newsletter-response" class="form-response"></span>
-<div class="tooltip-bubble">
-  By signing up, you consent to us storing your email address to send development updates and release news.
-  <br>You can <strong>unsubscribe at any time</strong> by replying to any email or contacting us via the Contact page.
-  <div class="tooltip-arrow"></div>
-</div>
+<div class="newsletter-wrapper">
+  <label for="email" class="newsletter-label">Sign up for our newsletter</label>
+  <form id="newsletter-form" action="https://script.google.com/macros/s/AKfycbyFFDq0ryGqWo4S0yUoOtIOqyDy2-LTEEj1X_nCcKz5PvKK_smMJ3fYgdTVe4M6l7JU/exec" method="POST" class="newsletter-inline">
+    <input type="email" name="email" id="email" placeholder="Your email address" required />
+    <button type="submit" id="subscribe-button">Subscribe</button>
+    <button type="button" id="info-toggle" class="info-button" aria-label="Privacy info">ℹ️</button>
+    <span id="newsletter-response" class="form-response"></span>
 
-      </form>
-      </div>
+    <div class="tooltip-bubble" id="tooltip-bubble">
+      By signing up, you consent to us storing your email address to send development updates and release news.
+      <br><strong>You can unsubscribe at any time</strong> by replying to any email or contacting us via the Contact page.
+      <div class="tooltip-arrow"></div>
+    </div>
+  </form>
+</div>
     </div>
   </div>
 </footer>
@@ -97,36 +98,40 @@
   const button = document.getElementById("subscribe-button");
   const emailInput = document.getElementById("email");
 
-form.addEventListener("submit", function (e) {
-  e.preventDefault();
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-  // Visa laddande text direkt
-  button.textContent = "Subscribing...";
-  button.disabled = true;
-  response.textContent = "";
+    button.textContent = "Subscribing...";
+    button.disabled = true;
+    response.textContent = "";
 
-  const formData = new FormData(form);
-  fetch(form.action, {
-    method: "POST",
-    body: formData,
-  })
-    .then(() => {
-      emailInput.value = "Thanks for signing up! ✌️";
-      emailInput.disabled = true;
-      button.textContent = "Subscribed ✅";
-      response.textContent = "";
+    const formData = new FormData(form);
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
     })
-    .catch(() => {
-      button.textContent = "Subscribe";
-      button.disabled = false;
-      response.textContent = "Something went wrong. Please try again later.";
-      response.style.color = "#ff4d4d";
-    });
-});
+      .then(() => {
+        emailInput.value = "Thanks for signing up! ✌️";
+        emailInput.disabled = true;
+        button.textContent = "Subscribed ✅";
+        response.textContent = "";
+      })
+      .catch(() => {
+        button.textContent = "Subscribe";
+        button.disabled = false;
+        response.textContent = "Something went wrong. Please try again later.";
+        response.style.color = "#ff4d4d";
+      });
+  });
 
+  // GDPR info toggle
+  const infoToggle = document.getElementById("info-toggle");
+  const tooltipBubble = document.getElementById("tooltip-bubble");
+
+  infoToggle.addEventListener("click", () => {
+    tooltipBubble.classList.toggle("active");
+  });
 </script>
-
-
   
 <!-- 
   
