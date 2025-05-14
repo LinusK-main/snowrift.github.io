@@ -77,9 +77,7 @@
       <input type="email" name="email" id="email" placeholder="Your email address" required />
       <button type="submit" id="subscribe-button">Subscribe</button>
       <span id="newsletter-response" class="form-response"></span>
-      <span class="consent-text">
-        By signing up, you consent to us storing your email address for the purpose of sending development updates and release news. You can unsubscribe at any time. We never share your data.
-      </span>
+      <div class="tooltip-bubble">By signing up, you consent to us storing your email address for the purpose of sending development updates and release news. You can unsubscribe at any time. We never share your data.<div class="tooltip-arrow"></div></div>
     </form>
   </div>
 </footer>
@@ -99,19 +97,20 @@
       method: "POST",
       body: formData,
     })
-    .then(() => {
-      emailInput.value = "Thanks for signing up! ✌️";
-      emailInput.disabled = true;
-      button.textContent = "Subscribed ✅";
-      button.disabled = true;
-      response.textContent = "";
-    })
-    .catch(() => {
-      response.textContent = "Something went wrong. Please try again later.";
-      response.style.color = "#ff4d4d";
-    });
+      .then(() => {
+        emailInput.value = "Thanks for signing up! ✌️";
+        emailInput.disabled = true;
+        button.textContent = "Subscribed ✅";
+        button.disabled = true;
+        response.textContent = "";
+      })
+      .catch(() => {
+        response.textContent = "Something went wrong. Please try again later.";
+        response.style.color = "#ff4d4d";
+      });
   });
 </script>
+
 
   
 <!-- 
