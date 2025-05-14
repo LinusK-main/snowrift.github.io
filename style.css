@@ -446,7 +446,8 @@ h2.section-title {
   display: none;
   position: absolute;
   bottom: 125%;
-  left: 0;
+  left: auto;
+  right: 1rem;
   background-color: #333;
   color: #fff;
   padding: 0.7rem;
@@ -465,7 +466,8 @@ h2.section-title {
 .tooltip-arrow {
   position: absolute;
   top: 100%;
-  left: 1rem;
+  left: auto;
+  right: 1rem;
   width: 0;
   height: 0;
   border-left: 8px solid transparent;
